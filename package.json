@@ -1,0 +1,29 @@
+{
+  "name": "gulp-farm",
+  "version": "1.0.0",
+  "description": "this gulp edication repo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avnikasikci/gulp-farm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/avnikasikci/gulp-farm/issues"
+  },
+  "homepage": "https://github.com/avnikasikci/gulp-farm#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean-dest": "^0.2.0",
+    "gulp-watch": "^5.0.1",
+    "plugin-error": "^0.1.2",
+    "through2": "^2.0.3"
+  },
+  "dependencies": {
+    "gulp-copy": "^4.0.1"
+  }
+}
