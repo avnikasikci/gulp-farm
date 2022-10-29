@@ -1,22 +1,22 @@
+/*part -5 */
 
-/*this lesson 4 copy and paste txt file*/
-//var copy = require('../index');
-//var copy = require('../../index');
+
+// var gulp = require('gulp');
+// var copy = require('gulp-copy');
+// var through = require('through2');
+
 var copy = require('../../node_modules/gulp-copy');
-
-/*this lesson after than*/
-//var gulp = require('gulp');
 var gulp = require('../../node_modules/gulp');
-//var through = require('through2');
 var through = require('../../node_modules/through2');
 
-gulp.task('default', copyFunction);
+
+gulp.task('defaultTask', copyFunction);
 
 function copyFunction() {
-    return gulp
-        .src([' ./files/.*', './files/*.*'])
-        .pipe(copy('output/test', { prefix: 1 }))
-        .pipe(verify());
+
+    return gulp.src(['./files.*', './files/*.*']) // files klasoründeki tüm sub dosyaları ve bahsi geçen tüm dosyaları source olarak veriyoruz
+        .pipe(copy('output/test', { prefix: 1 }))//hedef klasorumuz output/test olarak belirledik
+        .pipe(verify()); //dosya yazma işlemlerinde bir sorun oluşmus mu ?
 }
 
 function verify() {
@@ -24,12 +24,11 @@ function verify() {
     return through(options, write, end);
 
     function write(file, enc, cb) {
-        console.log('file write ', file.path);
-        cb(null, file);
+        console.log('file write', file.path);
+        cb(null,file);
     }
-
     function end(cb) {
-        console.log('done is copy verify function');
+        console.log("end to copy");
         cb();
     }
 }
